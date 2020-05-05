@@ -1,0 +1,8 @@
+/app/staticfiles/
+/app/api/staticfiles/
+.env
+.env.prod
+.env.prod.db
+.env.prod.pgadmin
+TODO.md
+
