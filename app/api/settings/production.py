@@ -43,6 +43,7 @@ APP_THRIDPARTY = [
     'rest_framework',
     'drf_yasg',
     'corsheaders',
+    'core',
 ]
 
 APP_API = []
@@ -165,3 +166,4 @@ CORS_ALLOW_HEADERS = default_headers + (
     'HTTP_X_XSRF_TOKEN',
     "X-ACCESS_TOKEN",
 )
+AUTH_USER_MODEL = 'core.user'
