@@ -1,5 +1,3 @@
-TRAVIS CI [![Build Status](https://travis-ci.org/ngelrojas/brasilprev-shopping.svg?branch=master)](https://travis-ci.org/ngelrojas/brasilprev-shopping)
-
 # Brasil-prev shopping
 
 Brasil-prev shopping is just to begin a project using Django, Django Rest Framework and Docker.
