@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import datetime
 from corsheaders.defaults import default_methods
 from corsheaders.defaults import default_headers
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -43,10 +44,11 @@ APP_THRIDPARTY = [
     'rest_framework',
     'drf_yasg',
     'corsheaders',
-    'core',
 ]
 
-APP_API = []
+APP_API = [
+    'core',
+]
 
 INSTALLED_APPS = APP_LOCAL + APP_THRIDPARTY + APP_API
 
@@ -65,7 +67,7 @@ ROOT_URLCONF = 'api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -97,10 +99,16 @@ DATABASES = {
 
 # dictionary REST_FRAMEWORK
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend'
     ]
 }
 
@@ -167,3 +175,26 @@ CORS_ALLOW_HEADERS = default_headers + (
     "X-ACCESS_TOKEN",
 )
 AUTH_USER_MODEL = 'core.user'
+
+# config jwt
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=4300),
+
+    'JWT_ALLOW_REFRESH': False,
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
+
+    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
+    'JWT_AUTH_COOKIE': None,
+
+}
+
+# send email
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'mail.ngelrojasp.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'brasilprev@ngelrojasp.com'
+EMAIL_HOST_PASSWORD = 'brasilprev2020'
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+DEFAULT_FROM_EMAIL = 'brasilprev@ngelrojasp.com'
+URL_PRODUCTION = 'http://localhost:3000'
