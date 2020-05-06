@@ -28,10 +28,19 @@ class Command(BaseCommand):
 
         with transaction.atomic():
             try:
+                # create super user
                 User.objects.create_superuser(
                     'admin@brasilprev.com',
                     'admin2020'
                 )
                 self.success('admin user created.')
+                # create user to re-send email confirmation
+                User.objects.create_user(
+                    email='jhon@yopmail.com',
+                    password='me123',
+                    first_name='jhon',
+                    last_name='Doe',
+                    is_activate=False)
+                self.success('user created.')
             except Exception:
                 self.error('please provide email and password')
