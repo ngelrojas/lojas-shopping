@@ -40,6 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         choices=TYPE_USER,
         default=1
     )
+    is_delete = models.BooleanField(default=False)
     is_activate = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
