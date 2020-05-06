@@ -6,3 +6,8 @@ djangorestframework
 drf-yasg
 django-cors-headers
 django-smtp-ssl
+djangorestframework-jwt
+Babel
+celery
+django-autoslug
+django-filter
