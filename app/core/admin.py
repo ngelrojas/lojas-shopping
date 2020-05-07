@@ -3,6 +3,8 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext as _
 
 from .models.user import User
+from .models.profile import ProfileBuyer
+from .models.profile import ProfileSeller
 
 
 class UserAdmin(BaseUserAdmin):
@@ -20,8 +22,7 @@ class UserAdmin(BaseUserAdmin):
             {'fields': (
                 'first_name',
                 'last_name',
-                'is_delete',
-                'type_user', )}),
+                'is_delete',)}),
         (
             _('Permissions'),
             {'fields': ('is_activate', 'is_staff', 'is_superuser')}
@@ -38,3 +39,5 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(User, UserAdmin)
+admin.site.register(ProfileBuyer)
+admin.site.register(ProfileSeller)
