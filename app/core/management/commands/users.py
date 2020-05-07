@@ -35,12 +35,34 @@ class Command(BaseCommand):
                 )
                 self.success('admin user created.')
                 # create user to re-send email confirmation
-                User.objects.create_user(
+                jhon = User.objects.create_user(
                     email='jhon@yopmail.com',
                     password='me123',
                     first_name='jhon',
-                    last_name='Doe',
-                    is_activate=False)
-                self.success('user created.')
-            except Exception:
-                self.error('please provide email and password')
+                    last_name='Doe')
+                self.success(f'user seller {jhon.first_name} created\
+                             activated={jhon.is_activate}')
+
+                xavier = User.objects.create_user(
+                    email='xavier@yopmail.com',
+                    password='me123',
+                    first_name='Xavier',
+                    last_name='Doe')
+                xavier = User.objects.get(id=xavier.id)
+                xavier.is_activate = True
+                xavier.save()
+                self.success(f'user seller {xavier.first_name} created\
+                             activated={xavier.is_activate}')
+
+                mery = User.objects.create_user(
+                    email='mery@yopmail.com',
+                    password='me123',
+                    first_name='Mery',
+                    last_name='Doe')
+                mery = User.objects.get(id=mery.id)
+                mery.is_activate = True
+                mery.save()
+                self.success(f'user buyer {mery.first_name} created\
+                             activated={mery.is_activate}')
+            except Exception as err:
+                self.error(f'{err}')
