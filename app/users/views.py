@@ -3,10 +3,10 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from core.models.user import User
+from core.models.queries.queryUser import HelperUser
 from .serializers import UserSerializer
 from .serializers import RecoveryPwdSerializer
 from .serializers import PwdConfirmSerialzier
-from .helper_models.helperUser import HelperUser
 from .helper_views.helperRecoveryPwd import HelperRecoveryPWD
 from .helper_views.helperUpdateUser import HelperUpdateUser
 
@@ -23,7 +23,10 @@ class UpdateUserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
 
     def retrieve(self, request, pk=None):
-        """retrieve current user"""
+        """
+        retrieve current user using rules:
+        - user not status deleted
+        """
         try:
             current_user = HelperUser.is_DeleteUser(self, request)
             serializer = self.serializer_class(current_user)
