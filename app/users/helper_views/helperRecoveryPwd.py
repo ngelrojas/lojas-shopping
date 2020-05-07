@@ -1,5 +1,5 @@
 from core.encoder.tokens import decode_user_id
-from users.helper_models.helperUser import HelperUser
+from core.models.queries.queryUser import HelperUser
 
 
 class HelperRecoveryPWD:
