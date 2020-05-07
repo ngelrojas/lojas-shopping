@@ -1,9 +1,9 @@
 from rest_framework import viewsets
-from core.encoder.tokens import decode_user_id
 from rest_framework.response import Response
-from core.models.user import User
 from rest_framework import status
-from users.helper_models.helperUser import HelperUser
+from core.encoder.tokens import decode_user_id
+from core.models.user import User
+from core.models.queries.queryUser import HelperUser
 
 
 class HelperActivate(viewsets.ModelViewSet):
