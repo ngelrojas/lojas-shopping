@@ -48,6 +48,8 @@ APP_THRIDPARTY = [
 
 APP_API = [
     'core',
+    'users',
+    'profiles',
 ]
 
 INSTALLED_APPS = APP_LOCAL + APP_THRIDPARTY + APP_API
