@@ -28,20 +28,14 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    """custom user model that supposrts using email instead of username"""
-    TYPE_USER = (
-        (1, 'seller'),
-        (2, 'buyer')
-    )
+    """
+    custom user model that supposrts using email instead of username
+    """
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    type_user = models.PositiveSmallIntegerField(
-        choices=TYPE_USER,
-        default=1
-    )
     is_delete = models.BooleanField(default=False)
-    is_activate = models.BooleanField(default=True)
+    is_activate = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
