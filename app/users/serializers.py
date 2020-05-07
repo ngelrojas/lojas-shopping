@@ -6,7 +6,7 @@ from core.encoder.tokens import encode_user_id
 from core.encoder.tokens import make_user_token
 from api.celery import send_email_module
 from api.settings import development
-from .helper_models.helperUser import HelperUser
+from core.models.queries.queryUser import HelperUser
 
 
 class UserSerializer(serializers.ModelSerializer):
