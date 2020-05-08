@@ -5,6 +5,8 @@ from django.utils.translation import gettext as _
 from .models.user import User
 from .models.profile import ProfileBuyer
 from .models.profile import ProfileSeller
+from .models.product import Product
+from .models.order import Order
 
 
 class UserAdmin(BaseUserAdmin):
@@ -41,3 +43,5 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(User, UserAdmin)
 admin.site.register(ProfileBuyer)
 admin.site.register(ProfileSeller)
+admin.site.register(Product)
+admin.site.register(Order)
