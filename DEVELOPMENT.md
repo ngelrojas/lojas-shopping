@@ -1,5 +1,9 @@
 ### DEVELOPMENT
 
+#### File to .env to development
+
+-   `.env` file is develop environment
+
 #### Change file celery.py to development
 
 -   path: app/api/celery.py
