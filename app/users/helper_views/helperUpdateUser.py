@@ -1,4 +1,4 @@
-from users.helper_models.helperUser import HelperUser
+from core.models.queries.queryUser import HelperUser
 
 
 class HelperUpdateUser:
