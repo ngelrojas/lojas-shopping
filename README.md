@@ -6,6 +6,8 @@
 
 ### TLDR
 
+Hello, brasilprev-team, it was funny develop this test, :D
+
 Tools to development this project
 
 -   Django
@@ -21,10 +23,12 @@ Tools to development this project
 -   AWS EC2
 -   Docker
 -   Docker-compose
+-   NGINX
 
 Brasil-prev shopping is based in 12 factor to good developing and use TRAVIS-CI to continuous integration.
+It's a monolithic project
 
-### Configuration env files and description
+#### Configuration env files and description
 
 -   remove prefix ".example" in all .env files
 -   `.env` file is develop environment
@@ -57,18 +61,18 @@ Brasil-prev shopping is based in 12 factor to good developing and use TRAVIS-CI 
 
 [panel flower celery](http://3.87.243.115:5555)
 
-#### pangel pgadmin
+#### panel pgadmin
 
-[pangel pgadmin](http://3.87.243.115:5051)
+[panel pgadmin](http://3.87.243.115:5051)
 
 -   user = admin@brasilprev.com
 -   password = admin2020
 
 #### Collection files API
 
-for a test api in production
+for a good test api in production
 import in your postman file called BrasilPrev-API.json, that is in CollectionBrasilPrev folder
 
 -   in the variable `{{url_prod}}` put the url API production `3.87.243.115:1337`
 
-and testing the API.
+and testing API.
