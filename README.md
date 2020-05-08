@@ -71,7 +71,9 @@ It's a monolithic project
 #### Collection files API
 
 for a good test api in production
-import in your postman file called BrasilPrev-API.json, that is in CollectionBrasilPrev folder
+import in your postman file called BrasilPrev-API.json, that is in CollectionBrasilPrev folder.
+
+following the link: https://learning.postman.com/docs/postman/variables-and-environments/variables/#environments-in-postman
 
 -   in the variable `{{url_prod}}` put the url API production `3.87.243.115:1337`
 
