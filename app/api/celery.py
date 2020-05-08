@@ -5,8 +5,8 @@ from core.emails.email import BRPSendEmail
 from api.settings import development
 import os
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings.development')
 # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings.production')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'api.settings.development')
 app = Celery('api', broker='pyamqp://rabbitmq_user:admin2020@broker//')
 
 app.config_from_object('django.conf:settings', namespace='CELERY')
