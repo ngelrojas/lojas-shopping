@@ -4,6 +4,8 @@
 
 # Brasil-prev shopping
 
+### TLDR
+
 Tools to development this project
 
 -   Django
@@ -15,7 +17,7 @@ Tools to development this project
 -   PG-Admin
 -   Supervisor
 
--   Server
+-   SERVER
 -   AWS EC2
 -   Docker
 -   Docker-compose
@@ -30,6 +32,10 @@ Brasil-prev shopping is based in 12 factor to good developing and use TRAVIS-CI 
 -   `.env.prod.db` is database production environment
 -   `.env.prod.pgadmin` is pg-admin panel production
 -   `.env.prod.rabbitmq` is to connect rabbitmq and celery
+
+#### API documentation
+
+[api doc methods](https://github.com/ngelrojas/brasilprev-shopping/blob/master/APIDOC.md)
 
 #### run mode development
 
@@ -54,8 +60,9 @@ Brasil-prev shopping is based in 12 factor to good developing and use TRAVIS-CI 
 #### pangel pgadmin
 
 [pangel pgadmin](http://3.87.243.115:5051)
-user = admin@brasilprev.com
-password = admin2020
+
+-   user = admin@brasilprev.com
+-   password = admin2020
 
 #### Collection files API
 
