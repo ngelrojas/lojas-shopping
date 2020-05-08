@@ -1,6 +1,6 @@
-## DEVELOPMENT
+### DEVELOPMENT
 
-#### change file CELERY.PY to development
+#### Change file celery.py to development
 
 -   path: app/api/celery.py
 
@@ -16,7 +16,7 @@
     development.DEFAULT_FROM_EMAIL
 ```
 
-#### change file SERIALIZERS.PY to production, module USERS
+#### Change file serializers to production, module USERS
 
 -   path: app/users/serializers.py
 
@@ -28,7 +28,7 @@
     URL_TO_SEND = development.URL_PRODUCTION
 ```
 
-#### change file MANAGE.PY to production
+#### Change file manage.py to development
 
 -   path: app/manage.py
 
@@ -36,7 +36,7 @@
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "api.settings.development")
 ```
 
-# run production
+### Run development
 
 ```python
     docker-compose up -d --build
