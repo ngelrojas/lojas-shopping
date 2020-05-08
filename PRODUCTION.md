@@ -1,6 +1,6 @@
 ## PRODUCTION
 
-#### change file CELERY.PY to production
+#### Change file celery.py to production
 
 -   path: app/api/celery.py
 
@@ -16,7 +16,7 @@
     production.DEFAULT_FROM_EMAIL
 ```
 
-#### change file SERIALIZERS.PY to production, module USERS
+#### Change file serializers.py to production, module USERS
 
 -   path: app/users/serializers.py
 
@@ -28,7 +28,7 @@
     URL_TO_SEND = production.URL_PRODUCTION
 ```
 
-#### change file MANAGE.PY to production
+#### Change file manage.py to production
 
 -   path: app/manage.py
 
@@ -36,7 +36,7 @@
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "api.settings.production")
 ```
 
-# run production
+#### Run production
 
 ```python
     docker-compose -f docker-compose.prod.yml up -d --build
@@ -58,7 +58,7 @@
     docker-compose -f docker-compose.prod.yml exec api python manage.py product_orders
 ```
 
-## run server send email production using supervisor
+#### run server send email production using supervisor
 
 -   give permissions to `server_email.sh` file:
 
@@ -75,7 +75,7 @@
     -- sudo supervisorctl status
     -- sudo supervisorctl restart `brasilprev_ser`
 
-### Testing
+#### Testing
 
 -   Don't stop container
 -   Run the testing
@@ -108,12 +108,11 @@
 
 #### credential to pg admin
 
--   url to server pg-admin
--   http://3.87.243.115:5051/
+-   [url to server pg-admin](http://3.87.243.115:5051/)
 
-user = admin@brasilprev.com
-passowrd = admin2020
+-   user = admin@brasilprev.com
+-   passowrd = admin2020
 
 ##### server celery flower
 
-http://3.87.243.115:5555/dashboard
+[celery flower](http://3.87.243.115:5555/dashboard)
