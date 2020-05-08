@@ -5,6 +5,7 @@
 .env.prod.db
 .env.prod.pgadmin
 .env.prod.rabbitmq
-/app/core/migrations/
+/app/core/migrations/*
+app/core/migrations
 TODO.md
 
