@@ -110,7 +110,7 @@ Method RE-SEND-EMAIL send an email to user not received
 
 when user click in the link in your email, there are two parameters to pass the method called RE-ACTIVATE
 
--Method PUT: /re-activate
+-   Method PUT: /re-activate
 
 -   Decription:
     -- method activate a user, using UID and TOKEN
