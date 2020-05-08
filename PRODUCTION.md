@@ -1,5 +1,12 @@
 ## PRODUCTION
 
+#### Files .env to production
+
+-   `.env_prod` is production environment
+-   `.env.prod.db` is database production environment
+-   `.env.prod.pgadmin` is pg-admin panel production
+-   `.env.prod.rabbitmq` is to connect rabbitmq and celery
+
 #### Change file celery.py to production
 
 -   path: app/api/celery.py
