@@ -58,15 +58,22 @@
     docker-compose -f docker-compose.prod.yml exec api python manage.py product_orders
 ```
 
-```python
-    docker-compose -f docker-compose.prod.yml run api sh -c "python manage.py collectstatic --no-input --clear"
-```
+## run server send email production using supervisor
 
-## run celery production
+-   give permissions to `server_email.sh` file:
 
 ```python
-    docker-compose -f docker-compose.prod.yml run api sh -c "celery -A api.celery worker -l info"
+   chmod +x server_email.sh
 ```
+
+-   install supervisor in your server
+-   copy `brasilprev_server.conf` file into the path supervisor:
+-   path: etc/supervisor/conf.d
+-   run this command:
+    -- sudo supervisorctl reread
+    -- sudo supervisorctl update
+    -- sudo supervisorctl status
+    -- sudo supervisorctl restart `brasilprev_ser`
 
 ### Testing
 
@@ -74,7 +81,7 @@
 -   Run the testing
 
 ```python
-    docker-compose -f docker-compose.prod run api api sh -c "python manage.py test && flake8"
+    docker-compose -f docker-compose.prod.yml run api api sh -c "python manage.py test && flake8"
 ```
 
 #### troubleshooting
@@ -98,3 +105,15 @@
 ```
 
 -   refresh panel admin
+
+#### credential to pg admin
+
+-   url to server pg-admin
+-   http://3.87.243.115:5051/
+
+user = admin@brasilprev.com
+passowrd = admin2020
+
+##### server celery flower
+
+http://3.87.243.115:5555/dashboard
