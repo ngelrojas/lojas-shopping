@@ -1,0 +1,776 @@
+{
+	"info": {
+		"_postman_id": "facd225d-5b04-4c89-a86e-66d98020517d",
+		"name": "BrasilPrev-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "recovery-password",
+					"item": [
+						{
+							"name": "send-recovery-password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"jhon@yopmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/recovery-password",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"recovery-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change-recovery-confirm",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"uid\":\"Mg\",\n\t\"token\": \"5g9-abd0f4acc54fc66c0381\",\n\t\"password\": \"jhon321\",\n\t\"password_confirm\": \"jhon321\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/recovery-confirm",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"recovery-confirm"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Profile-Buyer",
+					"item": [
+						{
+							"name": "get-profile-buyer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Impob25AeW9wbWFpbC5jb20iLCJleHAiOjE1ODg4MTY5MTgsImVtYWlsIjoiamhvbkB5b3BtYWlsLmNvbSJ9.Mh0vjpDXCczMkabFXfN1MDFC8XdePXErVJVl9xQgn9E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/profile-buyer/10",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"profile-buyer",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-profile-buyer",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Impob25AeW9wbWFpbC5jb20iLCJleHAiOjE1ODg4MTY5MTgsImVtYWlsIjoiamhvbkB5b3BtYWlsLmNvbSJ9.Mh0vjpDXCczMkabFXfN1MDFC8XdePXErVJVl9xQgn9E"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dni\": \"123456\",\n    \"address\": \"1221113\",\n    \"country\": \"brazil\",\n    \"city\": \"sao paulo\",\n    \"zipcode\": \"11254633\",\n    \"cell_phone\": \"123123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/profile-buyer/10",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"profile-buyer",
+										"10"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Profile-Seller",
+					"item": [
+						{
+							"name": "get-profile-seller",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Impob25AeW9wbWFpbC5jb20iLCJleHAiOjE1ODg4MTkzODYsImVtYWlsIjoiamhvbkB5b3BtYWlsLmNvbSJ9.U5emAXj2KEC55_twi9NX4JbcudxHA84lpWlXPxkKUdk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_dev}}/api/v1/profile-seller/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"profile-seller",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create-profile-seller",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6InhhdmllckB5b3BtYWlsLmNvbSIsImV4cCI6MTU4ODg3NTA1MywiZW1haWwiOiJ4YXZpZXJAeW9wbWFpbC5jb20ifQ.jZm7zo-bi9CUc8riKjXXrOtZ4TCIisSzMNWy0fJ0nmw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dni\": \"123456\",\n    \"address\": \"122156\",\n    \"country\": \"brazil\",\n    \"city\": \"sao paulo\",\n    \"zipcode\": \"11254633\",\n    \"cell_phone\": \"123123\",\n    \"cnpj\": \"123654\",\n    \"company_name\":\"more\",\n    \"address_company\": \"more there\",\n    \"phone_company\": \"12365432\",\n    \"email_company\":\"more@xavier.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/profile-seller",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"profile-seller"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-profile-seller",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Impob25AeW9wbWFpbC5jb20iLCJleHAiOjE1ODg4MTkzODYsImVtYWlsIjoiamhvbkB5b3BtYWlsLmNvbSJ9.U5emAXj2KEC55_twi9NX4JbcudxHA84lpWlXPxkKUdk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dni\": \"123456\",\n    \"address\": \"FARAWAY\",\n    \"country\": \"brazil\",\n    \"city\": \"\",\n    \"zipcode\": \"11254633\",\n    \"cell_phone\": \"987654\",\n    \"cnpj\": \"987654\",\n    \"company_name\":\"more\",\n    \"address_company\": \"more there\",\n    \"phone_company\": \"12365432\",\n    \"email_company\":\"more@company.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_dev}}/api/v1/profile-seller/1",
+									"host": [
+										"{{url_dev}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"profile-seller",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "re-activate",
+					"item": [
+						{
+							"name": "re-activate/re-send-email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"jhon@yopmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_prod}}/api/v1/re-send-email",
+									"host": [
+										"{{url_prod}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"re-send-email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "re-activate/re-activate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"uid\": \"Mg\",\n\t\"token\": \"5gb-23e900a0f4d2749cd44a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_prod}}/api/v1/re-activate",
+									"host": [
+										"{{url_prod}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"re-activate"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "register-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\":\"ngel\",\n\t\"last_name\": \"me\",\n\t\"email\": \"aomarrojasp@gmail.com\",\n\t\"password\": \"me123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_prod}}/api/v1/user",
+							"host": [
+								"{{url_prod}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activate-user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url_dev}}/api/v1/activate/NA/5g9-c4ed28ef9653b6fbc47c",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"activate",
+								"NA",
+								"5g9-c4ed28ef9653b6fbc47c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"xavier@yopmail.com\",\n\t\"password\": \"me123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_prod}}/api/v1/auth",
+							"host": [
+								"{{url_prod}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Impob25AeW9wbWFpbC5jb20iLCJleHAiOjE1ODg3NDIwNDAsImVtYWlsIjoiamhvbkB5b3BtYWlsLmNvbSJ9.f1zJRjKeoiXkb7WnAZYM9oAEbf_UoTwWg3UJQGE6Jp8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\":\"Jhon Ngel NOW\",\n\t\"last_name\": \"Pacheco Update New NOW\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/user/1",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Impob25AeW9wbWFpbC5jb20iLCJleHAiOjE1ODg3MzI5MTEsImVtYWlsIjoiamhvbkB5b3BtYWlsLmNvbSJ9.9h92Y5nd8JduULXLtLdJvEDAeQnxEi4xz-5VcI5I-sY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\":\"ngel\",\n\t\"last_name\": \"Pacheco Update 15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/user/1",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Impob25AeW9wbWFpbC5jb20iLCJleHAiOjE1ODg3MzI5MTEsImVtYWlsIjoiamhvbkB5b3BtYWlsLmNvbSJ9.9h92Y5nd8JduULXLtLdJvEDAeQnxEi4xz-5VcI5I-sY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_dev}}/api/v1/user/5",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create-product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Impob25AeW9wbWFpbC5jb20iLCJleHAiOjE1ODg4NzAxMzEsImVtYWlsIjoiamhvbkB5b3BtYWlsLmNvbSJ9.1Z7WWU3SyaL_-rP5F9QQmnVCM4P4mWAv9byyucJmlhU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"first product\",\n  \"excerpt\": \"first product excerpt\",\n  \"description\": \"frist product description\",\n  \"updated_at\": \"2020-05-07T14:49:32.401Z\",\n  \"stock\": 20,\n  \"stock_min\": 5,\n  \"stock_max\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/product",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6InhhdmllckB5b3BtYWlsLmNvbSIsImV4cCI6MTU4ODg3OTQxNiwiZW1haWwiOiJ4YXZpZXJAeW9wbWFpbC5jb20ifQ.chIHOe3MTVAiZJxduwiSzMjt_wEolHl7eMy9djYsr8s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Fourth title\",\n  \"excerpt\": \"second product excerpt\",\n  \"description\": \"second product description\",\n  \"price\": 52.25,\n  \"descount\": 5,\n  \"coupon\": \"1addk55\",\n  \"stock\": 20,\n  \"stock_min\": 5,\n  \"stock_max\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/product/16",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6InhhdmllckB5b3BtYWlsLmNvbSIsImV4cCI6MTU4ODg5NDc3MCwiZW1haWwiOiJ4YXZpZXJAeW9wbWFpbC5jb20ifQ.TTQSJdnIeOji-SCiQ_OmC2QoUnriRno52tqjMeQLqp8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_dev}}/api/v1/product",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6InhhdmllckB5b3BtYWlsLmNvbSIsImV4cCI6MTU4ODg4NzA2MCwiZW1haWwiOiJ4YXZpZXJAeW9wbWFpbC5jb20ifQ.4Vp8m7z95Z62Jm-6146zAszgJxxTijHQn-pYbZF3vD8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Fiveth title OK NOW\",\n  \"excerpt\": \"second product excerpt\",\n  \"description\": \"second product description\",\n  \"price\": 101.25,\n  \"descount\": 7,\n  \"coupon\": \"1addk55\",\n  \"stock\": 20,\n  \"stock_min\": 5,\n  \"stock_max\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/product/56",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"56"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create-orders",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6InhhdmllckB5b3BtYWlsLmNvbSIsImV4cCI6MTU4ODg5NDc3MCwiZW1haWwiOiJ4YXZpZXJAeW9wbWFpbC5jb20ifQ.TTQSJdnIeOji-SCiQ_OmC2QoUnriRno52tqjMeQLqp8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"second order\",\n\t\"description\": \"SECOND ORDER DESCRIPTION\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/order",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6InhhdmllckB5b3BtYWlsLmNvbSIsImV4cCI6MTU4ODkwMDgyNCwiZW1haWwiOiJ4YXZpZXJAeW9wbWFpbC5jb20ifQ.SNJ6lJ4DX53hRU1S-qu5OKSmjdkTFaooNR3aAPoS-pI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"check pay\",\n\t\"amount\": 10,\n\t\"type_pay\": 3,\n\t\"status_pay\": 2,\n\t\"users\": 2,\n\t\"campaings\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/order",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6InhhdmllckB5b3BtYWlsLmNvbSIsImV4cCI6MTU4ODg5OTA4OCwiZW1haWwiOiJ4YXZpZXJAeW9wbWFpbC5jb20ifQ.P7PhhBHrB003odOOH8bHUSH3mzxjp1Wju3AOA28A1EU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"check pay\",\n\t\"amount\": 10,\n\t\"type_pay\": 3,\n\t\"status_pay\": 2,\n\t\"users\": 2,\n\t\"campaings\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/order/5",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-orders",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6InhhdmllckB5b3BtYWlsLmNvbSIsImV4cCI6MTU4ODg5NDc3MCwiZW1haWwiOiJ4YXZpZXJAeW9wbWFpbC5jb20ifQ.TTQSJdnIeOji-SCiQ_OmC2QoUnriRno52tqjMeQLqp8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"UPDATE NOW\",\n\t\"description\": \"SECOND ORDER DESCRIPTION\",\n\t\"products\": [1, 2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_dev}}/api/v1/order/5",
+							"host": [
+								"{{url_dev}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"order",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
