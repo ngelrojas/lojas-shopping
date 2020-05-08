@@ -4,9 +4,12 @@ from rest_framework.generics import get_object_or_404
 from core.models.user import User
 from core.encoder.tokens import encode_user_id
 from core.encoder.tokens import make_user_token
+from core.models.queries.queryUser import HelperUser
 from api.celery import send_email_module
 from api.settings import development
-from core.models.queries.queryUser import HelperUser
+
+
+URL_TO_SEND = development.URL_PRODUCTION
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -27,7 +30,7 @@ class UserSerializer(serializers.ModelSerializer):
         user_instance = User.objects.create_user(**validate_data)
         uid = encode_user_id(user_instance.id)
         token = make_user_token(user_instance)
-        url = f'{development.URL_PRODUCTION}/'
+        url = f'{URL_TO_SEND}/'
         context_page = '#/activation-account'
         email_context = {
             'fullname': f'{validate_data["first_name"]}',
@@ -66,7 +69,7 @@ class RecoveryPwdSerializer(serializers.ModelSerializer):
         user = get_object_or_404(User, email=validate_data.get('email'))
         uid = encode_user_id(user.id)
         token = make_user_token(user)
-        url = f'{development.URL_PRODUCTION}'
+        url = f'{URL_TO_SEND}'
         context_page = '#/recovery-password'
         email_context = {
             'fullname': f'{user.first_name}',
@@ -118,7 +121,7 @@ class ActivateSerializer(serializers.ModelSerializer):
         user = current.get_user_email(validate_data.get('email'))
         uid = encode_user_id(user.id)
         token = make_user_token(user)
-        url = f'{development.URL_PRODUCTION}'
+        url = f'{URL_TO_SEND}'
         context_page = '#/res-send-email-account'
         email_context = {
             'fullname': f'{user.first_name}',
