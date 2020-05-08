@@ -50,6 +50,8 @@ APP_API = [
     'core',
     'users',
     'profiles',
+    'products',
+    'orders',
 ]
 
 INSTALLED_APPS = APP_LOCAL + APP_THRIDPARTY + APP_API
