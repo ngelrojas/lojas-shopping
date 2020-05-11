@@ -26,7 +26,14 @@ Tools to development this project
 -   NGINX
 
 Brasil-prev shopping is based in 12 factor to good developing and use TRAVIS-CI to continuous integration.
-It's a monolithic project
+It's a monolithic project.
+
+-   CRUD User
+-   CRUD Profiles, Profile buyer and seller
+-   CRUD Orders
+-   CRUD Products
+-   SENT email confirmation
+-   SENT email re-confirmation
 
 #### Configuration env files and description
 
