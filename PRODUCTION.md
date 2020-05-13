@@ -78,18 +78,21 @@
 -   path: etc/supervisor/conf.d
 -   run this command:
 
-````python
+```python
      sudo supervisorctl reread
- ```
+```
+
 ```python
      sudo supervisorctl update
- ```
+```
+
 ```python
      sudo supervisorctl status
- ```
+```
+
 ```python
      sudo supervisorctl restart `brasilprev_server`
- ```
+```
 
 #### Testing
 
@@ -98,7 +101,7 @@
 
 ```python
  docker-compose -f docker-compose.prod.yml run api sh -c "python manage.py test && flake8"
-````
+```
 
 #### troubleshooting
 
