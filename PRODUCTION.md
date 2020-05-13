@@ -77,10 +77,18 @@
 -   copy `brasilprev_server.conf` file into the path supervisor:
 -   path: etc/supervisor/conf.d
 -   run this command:
-    -- sudo supervisorctl reread
-    -- sudo supervisorctl update
-    -- sudo supervisorctl status
-    -- sudo supervisorctl restart `brasilprev_ser`
+-   ```python
+        sudo supervisorctl reread
+    ```
+-   ```python
+        sudo supervisorctl update
+    ```
+-   ```python
+        sudo supervisorctl status
+    ```
+-   ```python
+        sudo supervisorctl restart `brasilprev_ser`
+    ```
 
 #### Testing
 
@@ -88,7 +96,7 @@
 -   Run the testing
 
 ```python
-    docker-compose -f docker-compose.prod.yml run api api sh -c "python manage.py test && flake8"
+    docker-compose -f docker-compose.prod.yml run api sh -c "python manage.py test && flake8"
 ```
 
 #### troubleshooting
@@ -108,7 +116,7 @@
 -   run the script
 
 ```python
-    docker-compose -f docker-compose.prod.yml run sh -c "python manage.py collectstatic --no-input --clear"
+    docker-compose -f docker-compose.prod.yml run api sh -c "python manage.py collectstatic --no-input --clear"
 ```
 
 -   refresh panel admin
